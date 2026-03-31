@@ -27,14 +27,14 @@
             color: var(--slate-50); 
             font-family: 'Inter', system-ui, sans-serif; 
             -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
+            line-height: 1.5;
             scroll-behavior: smooth;
         }
 
         /* --- ANIMATIONS PULSE --- */
         @keyframes pulse-orange {
             0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
+            70% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
             100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
         @keyframes pulse-white {
@@ -45,26 +45,23 @@
 
         /* --- BOUTON FLOTTANT --- */
         .floating-phone {
-            position: fixed; bottom: 25px; right: 25px;
+            position: fixed; bottom: 20px; right: 20px;
             background: var(--primary-orange); width: 65px; height: 65px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             z-index: 9999; text-decoration: none; animation: pulse-orange 2s infinite;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
-        .floating-phone:hover { transform: scale(1.15); }
         .floating-phone svg { width: 30px; height: 30px; fill: white; }
 
-        /* --- COOKIES V2 --- */
+        /* --- COOKIES --- */
         #cookie-banner {
             position: fixed; bottom: 20px; left: 20px; width: 320px;
-            background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px); padding: 20px; border-radius: 16px;
+            background: rgba(15, 23, 42, 0.98); border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px); padding: 20px; border-radius: 12px;
             z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: flex; flex-direction: column; gap: 12px; font-size: 0.85rem;
         }
-        .cookie-btns { display: flex; gap: 8px; }
-        .cookie-btns button { flex: 1; padding: 10px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .cookie-btns { display: flex; gap: 8px; margin-top: 10px; }
+        .cookie-btns button { flex: 1; padding: 8px; border-radius: 6px; border: none; font-weight: 700; cursor: pointer; }
         .accept-cook { background: var(--primary-orange); color: white; }
         .refuse-cook { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); }
 
@@ -83,10 +80,9 @@
         nav.desktop-nav a { color: var(--slate-400); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         nav.desktop-nav a:hover { color: white; }
 
-        .header-actions { display: flex; align-items: center; gap: 15px; }
-        .btn-nav-devis { background: var(--primary-orange); color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 0.85rem; transition: 0.3s; animation: pulse-orange 2.5s infinite; }
+        .btn-nav-devis { background: var(--primary-orange); color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 0.85rem; animation: pulse-orange 2.5s infinite; }
 
-        /* --- HERO & TRANSITION --- */
+        /* --- HERO --- */
         .hero {
             padding: 180px 5% 100px; text-align: center;
             background: radial-gradient(circle at top right, #1e293b, #0f172a);
@@ -95,8 +91,7 @@
             height: 150px;
             background: linear-gradient(180deg, #0f172a 0%, var(--slate-50) 100%);
         }
-
-        .hero h1 { font-family: 'DM Sans'; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 { font-family: 'DM Sans'; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
         .hero p { color: var(--slate-400); max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; }
         
         .btn-hero-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
@@ -106,80 +101,73 @@
 
         /* --- FEATURES --- */
         .features { padding: 80px 5% 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .feature-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; }
+        .feature-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; text-align: center; }
         .feature-card svg { width: 40px; height: 40px; fill: var(--primary-orange); margin-bottom: 15px; }
-        .feature-card h4 { margin-bottom: 10px; font-size: 1.2rem; }
 
         /* --- SERVICES --- */
         .services-section { background-color: var(--slate-50); color: var(--slate-900); padding: 0 5% 100px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto 0; }
-        .service-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid #cbd5e1; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: block; }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--primary-blue); }
-        .service-card h3 { font-family: 'DM Sans'; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .service-card svg { width: 28px; height: 28px; fill: var(--primary-orange); }
-        
-        .price-tag { display: block; color: var(--primary-blue); font-weight: 800; font-size: 1.1rem; margin-bottom: 15px; }
-        
-        .btn-devis-small { display: inline-block; margin-top: 20px; font-weight: 800; background: var(--primary-orange); color: white; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; animation: pulse-orange 2s infinite; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto 0; }
+        .service-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid #cbd5e1; text-decoration: none; color: inherit; display: block; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .service-card h3 { font-family: 'DM Sans'; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-size: 1.4rem; }
+        .price-tag { color: var(--primary-blue); font-weight: 800; font-size: 1.1rem; margin-bottom: 15px; display: block; }
+        .btn-devis-small { display: inline-block; margin-top: 20px; font-weight: 800; background: var(--primary-orange); color: white; padding: 10px 20px; border-radius: 8px; font-size: 0.85rem; text-transform: uppercase; animation: pulse-orange 2s infinite; }
 
         /* --- CONTACT --- */
-        .contact-section { 
-            padding: 100px 5%;
-            background: linear-gradient(180deg, var(--slate-50) 0%, #1e3a8a 10%, #0f172a 100%);
-        }
-        .contact-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center; }
-        .contact-info h2 { font-size: clamp(2rem, 4vw, 3rem); font-family: 'DM Sans'; margin-bottom: 20px; color: white; }
-        .phone-box-large { border: 2px solid white; padding: 30px; border-radius: 20px; display: block; text-decoration: none; color: white; text-align: center; transition: 0.3s; margin-top: 30px; animation: pulse-orange 2s infinite; }
+        .contact-section { padding: 100px 5%; background: linear-gradient(180deg, var(--slate-50) 0%, #1e3a8a 10%, #0f172a 100%); }
+        .contact-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; align-items: center; }
+        .contact-info h2 { font-size: clamp(2.5rem, 5vw, 3rem); font-family: 'DM Sans'; margin-bottom: 20px; color: white; }
+        .phone-box-large { border: 2px solid white; padding: 30px; border-radius: 20px; display: block; text-decoration: none; color: white; text-align: center; margin-top: 30px; animation: pulse-orange 2s infinite; }
         .phone-box-large span { font-size: 2.2rem; font-weight: 800; color: var(--primary-orange); display: block; }
 
-        .form-card { background: white; padding: 40px; border-radius: 24px; color: var(--slate-900); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        .form-card { background: white; padding: 40px; border-radius: 24px; color: var(--slate-900); }
         .form-group { margin-bottom: 15px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; font-family: inherit; font-size: 1rem; }
-        .btn-submit { width: 100%; background: var(--primary-orange); color: white; padding: 16px; border-radius: 12px; border: none; font-weight: 800; cursor: pointer; transition: 0.3s; animation: pulse-orange 2.5s infinite; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 12px; font-family: inherit; font-size: 1rem; }
+        .btn-submit { width: 100%; background: var(--primary-orange); color: white; padding: 18px; border-radius: 12px; border: none; font-weight: 800; animation: pulse-orange 2.5s infinite; }
 
         /* --- ZONES --- */
         .zones { padding: 80px 5%; text-align: center; background: white; color: var(--slate-900); }
         .zone-badge { padding: 10px 20px; border: 1px solid var(--primary-blue); border-radius: 50px; font-weight: 700; color: var(--primary-blue); display: inline-block; margin: 6px; }
 
-        /* --- FOOTER --- */
-        footer { background: #000; padding: 80px 5% 40px; color: var(--slate-400); display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        footer h4 { color: white; margin-bottom: 20px; font-family: 'DM Sans'; }
+        footer { background: #000; padding: 80px 5% 40px; color: var(--slate-400); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
 
-        /* --- ADAPTATION RESPONSIVE (SMARTPHONE & TABLETTE) --- */
-        @media (max-width: 1024px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 900px) {
+        /* --- CORRECTIFS UNIQUEMENT POUR PORTABLES --- */
+        @media (max-width: 600px) {
+            header { height: 70px; padding: 0 4%; }
+            .logo { font-size: 1.1rem; }
+            .btn-nav-devis { padding: 8px 12px; font-size: 0.75rem; border-radius: 8px; }
             .desktop-nav { display: none; }
-            #cookie-banner { width: calc(100% - 40px); left: 20px; bottom: 20px; }
-            .contact-container { grid-template-columns: 1fr; text-align: center; }
-            header { padding: 0 3%; }
-        }
-
-        @media (max-width: 640px) {
-            .services-grid { grid-template-columns: 1fr; }
-            .hero { padding: 140px 5% 60px; }
-            .btn-hero-group { flex-direction: column; }
-            .btn-main { width: 100%; }
-            .logo { font-size: 1.2rem; }
-            .btn-nav-devis { padding: 8px 15px; font-size: 0.75rem; }
-            .phone-box-large span { font-size: 1.8rem; }
-            .form-card { padding: 25px; }
+            
+            .hero { padding: 130px 5% 60px; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero p { font-size: 1rem; margin-bottom: 25px; }
+            .btn-main { width: 100%; padding: 14px; font-size: 0.95rem; }
+            .btn-hero-group { flex-direction: column; gap: 10px; }
+            
+            .features { padding-top: 40px; }
+            .service-card { padding: 25px; }
+            .service-card h3 { font-size: 1.2rem; }
+            
+            .contact-info h2 { font-size: 2rem; text-align: center; }
+            .phone-box-large { padding: 20px; }
+            .phone-box-large span { font-size: 1.7rem; }
+            .form-card { padding: 25px; margin-top: 20px; }
+            
+            #cookie-banner { width: calc(100% - 40px); left: 20px; bottom: 20px; padding: 15px; }
+            .floating-phone { width: 55px; height: 55px; bottom: 15px; right: 15px; }
         }
     </style>
 </head>
 <body>
 
     <div id="cookie-banner">
-        <p><strong>🍪 Respect de votre vie privée</strong><br>Nous utilisons des cookies pour optimiser votre expérience.</p>
+        <p><strong>🍪 Cookies</strong><br>Nous utilisons des cookies pour votre expérience.</p>
         <div class="cookie-btns">
-            <button class="accept-cook" onclick="this.parentElement.parentElement.style.display='none'">Accepter</button>
-            <button class="refuse-cook" onclick="this.parentElement.parentElement.style.display='none'">Refuser</button>
+            <button class="accept-cook" onclick="this.closest('#cookie-banner').style.display='none'">OK</button>
+            <button class="refuse-cook" onclick="this.closest('#cookie-banner').style.display='none'">Non</button>
         </div>
     </div>
 
-    <a href="tel:0753730112" class="floating-phone" title="Appeler SOS SERRURIER">
+    <a href="tel:0753730112" class="floating-phone">
         <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
     </a>
 
@@ -197,9 +185,9 @@
     </header>
 
     <section class="hero" id="accueil">
-        <p style="color: var(--primary-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Serrurier d'urgence dans le Var</p>
-        <h1>Sos Serrurier <br><span style="color: var(--primary-orange)">Dépannage Rapide</span></h1>
-        <p>Disponible 24h/24, 7j/7. Une porte claquée, une serrure bloquée ou une perte de clés ? Nos artisans serruriers interviennent immédiatement.</p>
+        <p style="color: var(--primary-blue); font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 10px;">Urgence Var (83)</p>
+        <h1>Sos Serrurier <br><span style="color: var(--primary-orange)">Dépannage 24/7</span></h1>
+        <p>Une porte claquée ou une serrure bloquée ? Nos artisans interviennent en 30 minutes pour votre sécurité.</p>
         <div class="btn-hero-group">
             <a href="tel:0753730112" class="btn-main btn-orange">📞 APPELER LE 07 53 73 01 12</a>
             <a href="#contact" class="btn-main btn-outline">DEMANDER UN DEVIS</a>
@@ -207,19 +195,16 @@
 
         <div class="features">
             <div class="feature-card">
-                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
                 <h4>Artisan Certifié</h4>
-                <p>Intervention rapide (30 min) partout dans le Var.</p>
             </div>
             <div class="feature-card">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                <h4>Devis Gratuit</h4>
-                <p>Transparence totale des prix communiquée avant toute intervention.</p>
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6z"/></svg>
+                <h4>Prix Fixes</h4>
             </div>
             <div class="feature-card">
-                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.5 11H11V7h1.5v4.26l3.7 2.22-.75 1.23-4.45-2.71z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2z"/></svg>
                 <h4>Dispo 24/7</h4>
-                <p>De garde dans tout le département, jour et nuit.</p>
             </div>
         </div>
     </section>
@@ -227,34 +212,27 @@
     <div class="transition-divider"></div>
 
     <section class="services-section" id="services">
-        <div style="text-align: center;">
-            <p style="color: var(--primary-blue); font-weight: 800; text-transform: uppercase;">Nos Expertises</p>
-            <h2>Services de Serrurerie Professionnels</h2>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p style="color: var(--primary-blue); font-weight: 800; text-transform: uppercase; font-size: 0.9rem;">Expertise</p>
+            <h2 style="font-family: 'DM Sans'; font-size: 2rem;">Nos Services</h2>
         </div>
-
         <div class="services-grid">
             <a href="#contact" class="service-card">
-                <h3><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3-9H9V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2z"/></svg> Ouverture de porte</h3>
+                <h3>🚪 Ouverture de porte</h3>
                 <span class="price-tag">À partir de 50€</span>
-                <p>Intervention propre sur portes claquées ou verrouillées, sans dommage.</p>
+                <p>Intervention propre sans dommage sur votre porte.</p>
                 <div class="btn-devis-small">Devis rapide ></div>
             </a>
             <a href="#contact" class="service-card">
-                <h3><svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg> Remplacement serrures</h3>
+                <h3>🔑 Remplacement serrure</h3>
                 <span class="price-tag">Sur devis</span>
-                <p>Installation immédiate toutes marques pour sécuriser vos accès.</p>
+                <p>Installation immédiate toutes marques (Fichet, Picard...).</p>
                 <div class="btn-devis-small">Devis rapide ></div>
             </a>
             <a href="#contact" class="service-card">
-                <h3><svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.45L20.14 19H3.86L12 5.45zM11 16h2v2h-2v-2zm0-7h2v5h-2V9z"/></svg> Mise en sécurité</h3>
-                <span class="price-tag">Urgence 24/7</span>
-                <p>Intervention urgente après tentative d'effraction ou cambriolage.</p>
-                <div class="btn-devis-small">Devis rapide ></div>
-            </a>
-            <a href="#contact" class="service-card">
-                <h3><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Blindage A2P</h3>
+                <h3>🛡️ Blindage A2P</h3>
                 <span class="price-tag">À partir de 180€</span>
-                <p>Installation de haute sécurité pour une protection maximale.</p>
+                <p>Haute sécurité pour une protection maximale de vos accès.</p>
                 <div class="btn-devis-small">Devis rapide ></div>
             </a>
         </div>
@@ -264,7 +242,7 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h2>Service d'Urgence Actif</h2>
-                <p>Besoin d'un serrurier en urgence ? Ne laissez pas une porte fracturée compromettre votre sécurité.</p>
+                <p>Besoin d'un serrurier en urgence ? On arrive !</p>
                 <a href="tel:0753730112" class="phone-box-large">
                     PERMANENCE 24/7
                     <span>07 53 73 01 12</span>
@@ -273,42 +251,37 @@
             <div class="form-card">
                 <form action="https://formspree.io/f/Sosfrance.contact@gmail.com" method="POST">
                     <div class="form-group"><input type="text" name="nom" placeholder="Votre Nom" required></div>
-                    <div class="form-group"><input type="tel" name="tel" placeholder="Votre Téléphone" required></div>
+                    <div class="form-group"><input type="tel" name="tel" placeholder="Téléphone" required></div>
                     <div class="form-group">
                         <select name="service" required>
-                            <option value="" disabled selected>Service souhaité</option>
                             <option value="Ouverture">Ouverture de porte</option>
-                            <option value="Serrure">Changement de serrure</option>
-                            <option value="Sécurité">Mise en sécurité</option>
+                            <option value="Serrure">Serrure</option>
+                            <option value="Blindage">Blindage</option>
                         </select>
                     </div>
-                    <div class="form-group"><textarea name="message" placeholder="Détails (Ville, type de problème...)" rows="3"></textarea></div>
-                    <button type="submit" class="btn-submit">ÊTRE APPELÉ IMMÉDIATEMENT</button>
+                    <div class="form-group"><textarea name="message" placeholder="Votre ville..." rows="2"></textarea></div>
+                    <button type="submit" class="btn-submit">ÊTRE APPELÉ</button>
                 </form>
             </div>
         </div>
     </section>
 
     <section class="zones" id="intervention">
-        <h2 style="font-family: 'DM Sans'; margin-bottom: 30px;">Intervention dans le Var</h2>
+        <h2 style="font-family: 'DM Sans'; margin-bottom: 20px;">Zones d'intervention</h2>
         <div class="zones-grid">
-            <span class="zone-badge">Toulon</span><span class="zone-badge">La Seyne</span><span class="zone-badge">Hyères</span>
-            <span class="zone-badge">Fréjus</span><span class="zone-badge">Draguignan</span><span class="zone-badge">Saint-Raphaël</span>
+            <span class="zone-badge">Toulon</span><span class="zone-badge">La Seyne</span><span class="zone-badge">Hyères</span><span class="zone-badge">Fréjus</span><span class="zone-badge">Draguignan</span>
         </div>
     </section>
 
     <footer>
         <div>
             <h4 style="color: var(--primary-blue);">SOS SERRURIER</h4>
-            <p>Expert serrurerie d'urgence dans le Var. SIRET: 994 413 227 00012</p>
+            <p>Serrurerie d'urgence Var. SIRET: 994 413 227 00012</p>
         </div>
         <div>
-            <h4>Contact Rapide</h4>
-            <a href="tel:0753730112" style="color: var(--primary-orange); font-weight: 800; font-size: 1.4rem; text-decoration: none;">07 53 73 01 12</a>
+            <h4>Contact</h4>
+            <a href="tel:0753730112" style="color: var(--primary-orange); font-weight: 800; text-decoration: none;">07 53 73 01 12</a>
             <p>Sosfrance.contact@gmail.com</p>
-        </div>
-        <div>
-            <a href="#" style="color: var(--slate-400)">Politique de confidentialité</a>
         </div>
     </footer>
 
